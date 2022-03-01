@@ -1,0 +1,101 @@
+\documentclass[twocolumn, 12pt, letterpaper, twoside]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{parskip}
+\graphicspath{{images/}}
+
+% adding title
+\title{My First document}
+\author{Peiran Qin \thanks{the tutorials from overleaf.com}}
+\date{1st March 2022}
+
+\begin{document}
+% making title appear
+\maketitle
+
+% table of contents
+\tableofcontents
+
+% abstract
+\begin{abstract}
+    This is a very short abstract with no meaningful contents to just show the function of abstract.
+\end{abstract}
+
+Hello world.
+
+% adding new lines and new paragraph
+This is the paragraph one, it mainly talk about something meanless to show an example about the difference between making a new line and a new para.
+newline without starting a new para
+
+
+This is a new para
+
+% First way of adding bold, italic, under line
+Latex is \textbf{fun}.
+coding is \underline{tedious}.
+coding plus Latex is \textbf{\textit{wow}}.
+
+% Adding emphasize
+\textbf{I am very \emph{hungry} now}
+
+% Adding images
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.25\textwidth]{dictionary.JPG}
+    \caption{a picture of youdao dictionary}
+    \label{fig:dic}
+\end{figure}
+As you can see in the figure \ref{fig:dic}, this is a picture of a electronic dictionary.
+
+% creating unordered lists
+\begin{itemize}
+    \item DDA2020
+    \item CSC3180
+\end{itemize}
+% creating ordered lists
+\begin{enumerate}
+    \item assignments
+    \item exams
+\end{enumerate}
+
+% inline mode
+There is a famous formulation: $E = mc^2 $, raised by Albert.
+% outline mode
+There are some formulations:
+\begin{equation}
+\begin{aligned}
+    f(x) &= x_1 + x_2^2//
+    &= x_1 + x_3//
+    g(x) &= x_{100} + 2
+\end{aligned}
+\end{equation}
+
+
+\section{Introduction}
+This is the Introduction section. In this section, the passage will briefly talk about the basic idea of our work.
+
+\section{Literature review}
+In this part, we will introduce some important work conducted previously.
+
+\subsection{Beer's work}
+Beer conduct the project in Chile but fail in the end.
+\paragraph{first para}
+I wonder if this paragraph could work?
+
+\subsection{Albert's work}
+Albert succeeded to be a great scientist in the world.
+
+% creating tables
+\begin{center}
+    \begin{tabular}{|c| c |c|}
+    \hline
+    a & b & c \\
+    \hline
+    d & e & f \\
+    \hline
+    \end{tabular}
+\end{center}
+
+
+\end{document}
