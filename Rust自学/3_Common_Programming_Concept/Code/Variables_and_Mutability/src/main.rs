@@ -25,6 +25,5 @@ fn main() {
         let letters = letters.len();
         println!("The value of letters rn is {}", letters);
     }
-
     println!("The value of letters out of scope is {}", letters);
 }

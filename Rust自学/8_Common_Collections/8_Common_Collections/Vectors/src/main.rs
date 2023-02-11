@@ -7,7 +7,7 @@ enum SpreadsheetCell{
 fn main() {
     let mut v: Vec<i32> = Vec::new();
 
-    let mut v = vec![1, 2, 3];
+    let mut v = vec![];
 
     v.push(5);
     v.push(6);

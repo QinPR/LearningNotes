@@ -45,18 +45,7 @@ fn main() {
     println!("the mix point is {:?}", stange);
 }
 
-fn largest(list: &[i32])-> i32 {
-    let mut largest = list[0];
-
-    for &item in list {
-        if item > largest{
-            largest = item;
-        }
-    }
-    largest
-}
-
-// fn largest<T>(list: &[T])-> T {
+// fn largest(list: &[i32])-> i32 {
 //     let mut largest = list[0];
 
 //     for &item in list {
@@ -66,4 +55,15 @@ fn largest(list: &[i32])-> i32 {
 //     }
 //     largest
 // }
+
+fn largest<T: PartialOrd + Copy>(list: &[T])-> T {
+    let mut largest = list[0];
+
+    for &item in list {
+        if item > largest{
+            largest = item;
+        }
+    }
+    largest
+}
 

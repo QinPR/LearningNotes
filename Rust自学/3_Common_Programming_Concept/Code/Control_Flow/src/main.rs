@@ -71,7 +71,7 @@ fn for_loop(){
         println!("the value is {}", element);
     }
 
-    for number in (1..4).rev(){
+    for number in (1..4).rev(){    // reverse the range
         println!("{}!", number);
     }
     println!("LISTOFF!!!");

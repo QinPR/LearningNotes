@@ -1,13 +1,15 @@
 fn main() {
     let mut s1 = String::from("Hello, world!");
 
-    s1.clear();
-
     let mut s2 = "hi world!";
+
+    // s2.clear();    error here since s2 is a slice which is a immutable &str
 
     let word = first_word(&s1);
 
-    // println!("the first word is {}", word);
+    s1.clear();
+
+   //println!("the first word is {}", word);
 
     let a = [1, 2, 3, 4, 5];
 

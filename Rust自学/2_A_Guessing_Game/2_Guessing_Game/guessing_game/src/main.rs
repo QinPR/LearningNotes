@@ -18,7 +18,10 @@ fn main() {
 
         let guess: i32 = match guess.trim().parse(){
             Ok(num) => num,
-            Err(_) => continue,
+            Err(_) => {
+                println!("[Please input a digit type!]");
+                continue;
+            },
         };
 
         println!("You guess: {}", guess);

@@ -4,7 +4,7 @@ fn main() {
     let r1 = &s1;
     let r2 = &s1;
     let r3 = &mut s1;
-    println!("{}, {}, {}", r1, r2, r3);
+    println!("{}, {}, {}", r1, r2, r3);    // erorr will occur here
 
     let len = calculate_length(&s1);
 
@@ -26,5 +26,5 @@ fn change(some_string: &mut String){
 fn dangle() -> &String{
     let s = String::from("hello");
 
-    &s
+    &s // error will occur here, because the value of s will be out of scope before the reference, and cause a dangling reference.
 }

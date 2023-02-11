@@ -1,6 +1,6 @@
 fn main() {
     // tuple
-    let tup: (u128, u128, u128) = (100, 100, 200);
+    let tup: (u128, u128, u128) = (100, 200, 300);
 
     let (x, y, z) = tup;
 

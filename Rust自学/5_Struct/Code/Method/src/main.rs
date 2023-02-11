@@ -8,6 +8,10 @@ impl Rectangle{
     fn area(&self) -> u32{
         self.width * self.height
     }
+
+    fn phen(&self) -> u32{
+        2 * (self.width + self.height)
+    }
 }
 
 impl Rectangle{
@@ -31,6 +35,11 @@ fn main() {
     println!(
         "The area of rect1 is {} square pixels",
         rect1.area()
+    );
+
+    println!(
+        "The phen of rect1 is {} pixels",
+        rect1.phen()
     );
 
     let rect2 = Rectangle{

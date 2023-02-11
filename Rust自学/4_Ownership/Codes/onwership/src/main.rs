@@ -11,7 +11,7 @@ fn main() {
 
         let i1 = 5;
         let i2 = i1;
-        println!("{}", i2);
+        println!("{}", i1);
     }
 
     let s1 = gives_ownership();
@@ -19,8 +19,11 @@ fn main() {
     let s2 = String::from("Hello");
 
     let s3 = takes_and_gives_back(s2);
+    // println!("{}", s2);     since the ownership of s2 is given to s3, this line will give error
 
     let (s4, len) = calculate_length(s3);
+    // println!("{}", s3);     same error here
+    
     println!("The len of {} is {}", s4, len);
 }
 

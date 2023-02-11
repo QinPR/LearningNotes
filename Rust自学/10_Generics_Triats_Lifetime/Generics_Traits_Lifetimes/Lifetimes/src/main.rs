@@ -30,7 +30,11 @@ fn main() {
 }
 
 fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
-    x
+    if x.len() > y.len() {
+        x
+    }else{
+        y
+    }
 }
 
 use std::fmt::Display;
