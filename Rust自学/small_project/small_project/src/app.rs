@@ -116,7 +116,6 @@ impl eframe::App for MyEguiApp {
                     return
                 }
             } 
-
             // main logic when game starts
             else{
                 ui.heading("Snake Game.");
@@ -132,7 +131,6 @@ impl eframe::App for MyEguiApp {
             }
 
             // update the movement of snake
-            // 1. when the snake move upward
             match self.direction {
                 Direction::Up => {
                     self.head_pos.min.y -= self.size;
@@ -143,12 +141,49 @@ impl eframe::App for MyEguiApp {
                         self.body_pos_vec[body_block_i].max.y -= self.size;
                     }
                 },
-                _ => (),
+                Direction::Down => {
+                    self.head_pos.min.y += self.size;
+                    self.head_pos.max.y += self.size;
+
+                    for body_block_i in 0..self.body_pos_vec.len() {
+                        self.body_pos_vec[body_block_i].min.y += self.size;
+                        self.body_pos_vec[body_block_i].max.y += self.size;
+                    }
+                },
+                Direction::Right => {
+                    self.head_pos.min.x += self.size;
+                    self.head_pos.max.x += self.size;
+
+                    for body_block_i in 0..self.body_pos_vec.len() {
+                        self.body_pos_vec[body_block_i].min.x += self.size;
+                        self.body_pos_vec[body_block_i].max.x += self.size;
+                    }
+                },
+                Direction::Left => {
+                    self.head_pos.min.x -= self.size;
+                    self.head_pos.max.x -= self.size;
+
+                    for body_block_i in 0..self.body_pos_vec.len() {
+                        self.body_pos_vec[body_block_i].min.x -= self.size;
+                        self.body_pos_vec[body_block_i].max.x -= self.size;
+                    }
+                },
+            }
+
+            // judge whether the snake reach the boundary
+            // whether reach the bounds
+            if self.head_pos.min.y <= 0.0 || self.head_pos.max.y >= 700.0 || self.head_pos.max.x <= 0.0 || self.head_pos.max.x >= 700.0 {
+                self.game_over = true;
             }
 
             // update the time
-            let one_second = time::Duration::new(1, 0);
-            thread::sleep(one_second);
+            // let one_second = time::Duration::new(1, 0);
+            // thread::sleep(one_second);
+            request_repaint_after(1);
         });
+    }
+
+    pub fn request_repaint_after(&self, duration: std::time::Duration) {
+        self.write(|ctx| ctx.repaint_after = ctx.repaint_after.min(duration));
     }
 }
